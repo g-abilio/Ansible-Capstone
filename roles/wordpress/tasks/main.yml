@@ -1,7 +1,8 @@
 --- 
 - name: Install Packages for Wordpress (Ubuntu)
   ansible.builtin.apt: 
-    wordpress_required_packages_ubuntu:
+    name: "{{ wordpress_required_packages_ubuntu.name }}"
+    state: present
     update_cache: yes 
 
 - name: Enable service httpd and ensure it is not masked
