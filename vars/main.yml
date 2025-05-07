@@ -1,0 +1,34 @@
+--- 
+wordpress_db: wordpress 
+wordpress_user: wordpress 
+wordpress_password: wordpress_password 
+mysql_root_password: super-secure-password
+
+mysql_databases: 
+  - name: "{{wordpress_db}}"
+mysql_users: 
+  - name: "{{wordpress_user}}" 
+    host: "%"
+    password: "{{wordpress_password}}" 
+    priv: "{{wordpress_user}}.*:ALL" 
+
+wordpress_required_packages_ubuntu: 
+  name: 
+    - apache2
+    - php
+    - php-pear
+    - php-cgi
+    - php-common
+    - php-curl
+    - php-mbstring
+    - php-gd
+    - php-mysqlnd
+    - php-bcmath
+    - php-json
+    - php-xml
+    - php-intl
+    - php-zip
+    - php-imap
+    - php-imagick
+
+... 
